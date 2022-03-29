@@ -1,11 +1,9 @@
 .elements__item {
   overflow: hidden;
 
-  width: 282px;
-  height: 361px;
+  max-width: 282px;
 
   color: #000;
   border-radius: 10px;
   background-color: #fff;
-
 }

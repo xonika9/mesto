@@ -2,8 +2,6 @@
   display: flex;
   align-items: baseline;
 
-  max-width: 100%;
-
   gap: 18px;
 }
 

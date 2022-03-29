@@ -1,5 +1,5 @@
 .elements__like {
-  min-width: 22px;
+  width: 22px;
   height: 19px;
   margin: 0;
   padding: 0;
@@ -8,7 +8,7 @@
   transition: opacity 0.3s;
 
   border: none;
-  background: transparent url("../../../images/like.svg");
+  background: transparent url('../../../images/like.svg');
   background-repeat: no-repeat;
   background-size: contain;
 }

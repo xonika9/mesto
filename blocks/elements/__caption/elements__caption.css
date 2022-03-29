@@ -6,4 +6,7 @@
   width: 246px;
   margin: auto;
   padding-top: 20px;
+  padding-bottom: 20px;
+
+  gap: 20px;
 }
