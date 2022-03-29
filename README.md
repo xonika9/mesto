@@ -21,5 +21,4 @@
 - Файловая структура БЭМ Nested
 - Popup окно и кнопки на JavaScript
 
-
 Ссылка на GitHub Pages: 'https://xonika9.github.io/mesto/'
