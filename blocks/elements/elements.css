@@ -1,24 +1,20 @@
 .elements {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
   justify-items: center;
+  column-gap: 17px;
+  row-gap: 20px;
   margin: 0;
   padding: 0;
   list-style: none;
-  column-gap: 17px;
-  row-gap: 20px;
 }
+
 
 @media screen and (max-width: 958px) {
   .elements {
-    grid-template-columns: repeat(2, 1fr);
     padding-right: 19px;
     padding-left: 19px;
   }
 }
 
-@media screen and (max-width: 640px) {
-  .elements {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
+*/
