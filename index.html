@@ -34,51 +34,53 @@
         <button class="profile__add-button" type="button" aria-label="Добавить"></button>
       </section>
 
-      <ul class="elements">
-        <li class="card">
-          <img src="./images/antelope-canyon-arizona.jpg" alt="Каньон Антилопы, Аризона" class="card__photo" />
-          <div class="card__caption">
-            <h2 class="card__title">Каньон Антилопы</h2>
-            <button class="card__like" type="button" aria-label="Нравится"></button>
-          </div>
-        </li>
-        <li class="card">
-          <img src="./images/faro-portugal.jpg" alt="Фаро, Португалия" class="card__photo" />
-          <div class="card__caption">
-            <h2 class="card__title">Фаро</h2>
-            <button class="card__like" type="button" aria-label="Нравится"></button>
-          </div>
-        </li>
-        <li class="card">
-          <img src="./images/grand-canyon-arizona.jpg" alt="Большой каньон, Аризона" class="card__photo" />
-          <div class="card__caption">
-            <h2 class="card__title">Большой каньон</h2>
-            <button class="card__like" type="button" aria-label="Нравится"></button>
-          </div>
-        </li>
-        <li class="card">
-          <img src="./images/paraty-brazil.jpg" alt="Парати, Бразилия" class="card__photo" />
-          <div class="card__caption">
-            <h2 class="card__title">Парати</h2>
-            <button class="card__like" type="button" aria-label="Нравится"></button>
-          </div>
-        </li>
-        <li class="card">
-          <img src="./images/san-francisco-ca.jpg" alt="Пальмы в Сан-Франциско" class="card__photo" />
-          <div class="card__caption">
-            <h2 class="card__title">Сан-Франциско</h2>
-            <button class="card__like" type="button" aria-label="Нравится"></button>
-          </div>
-        </li>
-        <li class="card">
-          <img src="./images/wooden-shoe-tulip-farm-oregon.jpg" alt="Тюльпан на ферме Wooden Shoe, Орегон"
-            class="card__photo" />
-          <div class="card__caption">
-            <h2 class="card__title">Ферма Wooden Shoe</h2>
-            <button class="card__like" type="button" aria-label="Нравится"></button>
-          </div>
-        </li>
-      </ul>
+      <section>
+        <ul class="elements">
+          <li class="card">
+            <img src="./images/antelope-canyon-arizona.jpg" alt="Каньон Антилопы, Аризона" class="card__photo" />
+            <div class="card__caption">
+              <h2 class="card__title">Каньон Антилопы</h2>
+              <button class="card__like" type="button" aria-label="Нравится"></button>
+            </div>
+          </li>
+          <li class="card">
+            <img src="./images/faro-portugal.jpg" alt="Фаро, Португалия" class="card__photo" />
+            <div class="card__caption">
+              <h2 class="card__title">Фаро</h2>
+              <button class="card__like" type="button" aria-label="Нравится"></button>
+            </div>
+          </li>
+          <li class="card">
+            <img src="./images/grand-canyon-arizona.jpg" alt="Большой каньон, Аризона" class="card__photo" />
+            <div class="card__caption">
+              <h2 class="card__title">Большой каньон</h2>
+              <button class="card__like" type="button" aria-label="Нравится"></button>
+            </div>
+          </li>
+          <li class="card">
+            <img src="./images/paraty-brazil.jpg" alt="Парати, Бразилия" class="card__photo" />
+            <div class="card__caption">
+              <h2 class="card__title">Парати</h2>
+              <button class="card__like" type="button" aria-label="Нравится"></button>
+            </div>
+          </li>
+          <li class="card">
+            <img src="./images/san-francisco-ca.jpg" alt="Пальмы в Сан-Франциско" class="card__photo" />
+            <div class="card__caption">
+              <h2 class="card__title">Сан-Франциско</h2>
+              <button class="card__like" type="button" aria-label="Нравится"></button>
+            </div>
+          </li>
+          <li class="card">
+            <img src="./images/wooden-shoe-tulip-farm-oregon.jpg" alt="Тюльпан на ферме Wooden Shoe, Орегон"
+              class="card__photo" />
+            <div class="card__caption">
+              <h2 class="card__title">Ферма Wooden Shoe</h2>
+              <button class="card__like" type="button" aria-label="Нравится"></button>
+            </div>
+          </li>
+        </ul>
+      </section>
     </main>
 
     <footer class="footer">
@@ -90,7 +92,7 @@
     <div class="popup__content">
       <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form">
+      <form class="popup__form" name="popup__form">
         <input class="popup__input popup__input_type_name" type="text" name="name" required />
         <input class="popup__input popup__input_type_about" type="text" name="about" required />
         <button class="popup__submit-button" type="submit" aria-label="Сохранить">
