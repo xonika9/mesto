@@ -2,17 +2,13 @@
   display: flex;
   overflow: hidden;
   flex-direction: column;
-
   width: 100%;
-
   gap: 10px;
 }
 
 @media screen and (max-width: 767px) {
   .profile__text {
     align-items: center;
-
     margin: 23px 0 34px;
-
   }
 }

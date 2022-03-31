@@ -1,7 +1,6 @@
 .profile__title {
   display: flex;
   align-items: baseline;
-
   gap: 18px;
 }
 

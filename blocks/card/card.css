@@ -1,9 +1,7 @@
 .elements__item {
   overflow: hidden;
-
   max-width: 282px;
-
-  color: #000;
   border-radius: 10px;
   background-color: #fff;
+  color: #000;
 }

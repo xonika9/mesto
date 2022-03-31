@@ -1,18 +1,16 @@
 .profile__add-button {
   box-sizing: border-box;
-  width: 150px;
-  height: 50px;
   margin: 0;
   padding: 0;
-
-  cursor: pointer;
-  transition: opacity 0.3s;
-
+  width: 150px;
+  height: 50px;
   border: 2px solid #fff;
   border-radius: 2px;
   background: transparent url("../../../images/add-button.svg");
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: opacity 0.3s;
 }
 
 .profile__add-button:hover {

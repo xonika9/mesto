@@ -1,180 +1,105 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Mesto - интерактивная страница, куда можно добавлять фотографии, удалять их и ставить лайки."
-    />
-    <meta name="keywords" content="html, css" />
-    <meta name="author" content="Алексей Бельтюков" />
-    <link rel="stylesheet" href="./pages/index.css" />
-    <title>Mesto</title>
-  </head>
 
-  <body class="page">
-    <div class="page__container">
-      <header class="header">
-        <a href="#" class="header__logo"></a>
-      </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Mesto - интерактивная страница, куда можно добавлять фотографии, удалять их и ставить лайки." />
+  <meta name="keywords" content="html, css" />
+  <meta name="author" content="Алексей Бельтюков" />
+  <link rel="stylesheet" href="./pages/index.css" />
+  <title>Mesto</title>
+</head>
 
-      <main class="content">
-        <section class="profile">
-          <div class="profile__info">
-            <img
-              src="./images/avatar-cousteau.jpg"
-              alt="Жак-Ив Кусто"
-              class="profile__avatar"
-            />
-            <div class="profile__text">
-              <div class="profile__title">
-                <h1 class="profile__name">Жак-Ив Кусто</h1>
-                <button
-                  class="profile__edit-button"
-                  type="button"
-                  aria-label="Редактировать"
-                ></button>
-              </div>
-              <p class="profile__about">Исследователь океана</p>
+<body class="page">
+  <div class="page__container">
+    <header class="header">
+      <a href="#" class="header__logo"></a>
+    </header>
+
+    <main class="content">
+      <section class="profile">
+        <div class="profile__info">
+          <img src="./images/avatar-cousteau.jpg" alt="Жак-Ив Кусто" class="profile__avatar" />
+          <div class="profile__text">
+            <div class="profile__title">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button" type="button" aria-label="Редактировать"></button>
             </div>
+            <p class="profile__about">Исследователь океана</p>
           </div>
-          <button
-            class="profile__add-button"
-            type="button"
-            aria-label="Добавить"
-          ></button>
-        </section>
+        </div>
+        <button class="profile__add-button" type="button" aria-label="Добавить"></button>
+      </section>
 
-        <ul class="elements">
-          <li class="elements__item">
-            <img
-              src="./images/antelope-canyon-arizona.jpg"
-              alt="Каньон Антилопы, Аризона"
-              class="elements__photo"
-            />
-            <div class="elements__caption">
-              <h2 class="elements__title">Каньон Антилопы</h2>
-              <button
-                class="elements__like"
-                type="button"
-                aria-label="Нравится"
-              ></button>
-            </div>
-          </li>
-          <li class="elements__item">
-            <img
-              src="./images/faro-portugal.jpg"
-              alt="Фаро, Португалия"
-              class="elements__photo"
-            />
-            <div class="elements__caption">
-              <h2 class="elements__title">Фаро</h2>
-              <button
-                class="elements__like"
-                type="button"
-                aria-label="Нравится"
-              ></button>
-            </div>
-          </li>
-          <li class="elements__item">
-            <img
-              src="./images/grand-canyon-arizona.jpg"
-              alt="Большой каньон, Аризона"
-              class="elements__photo"
-            />
-            <div class="elements__caption">
-              <h2 class="elements__title">Большой каньон</h2>
-              <button
-                class="elements__like"
-                type="button"
-                aria-label="Нравится"
-              ></button>
-            </div>
-          </li>
-          <li class="elements__item">
-            <img
-              src="./images/paraty-brazil.jpg"
-              alt="Парати, Бразилия"
-              class="elements__photo"
-            />
-            <div class="elements__caption">
-              <h2 class="elements__title">Парати</h2>
-              <button
-                class="elements__like"
-                type="button"
-                aria-label="Нравится"
-              ></button>
-            </div>
-          </li>
-          <li class="elements__item">
-            <img
-              src="./images/san-francisco-ca.jpg"
-              alt="Пальмы в Сан-Франциско"
-              class="elements__photo"
-            />
-            <div class="elements__caption">
-              <h2 class="elements__title">Сан-Франциско</h2>
-              <button
-                class="elements__like"
-                type="button"
-                aria-label="Нравится"
-              ></button>
-            </div>
-          </li>
-          <li class="elements__item">
-            <img
-              src="./images/wooden-shoe-tulip-farm-oregon.jpg"
-              alt="Тюльпан на ферме Wooden Shoe, Орегон"
-              class="elements__photo"
-            />
-            <div class="elements__caption">
-              <h2 class="elements__title">Ферма Wooden Shoe</h2>
-              <button
-                class="elements__like"
-                type="button"
-                aria-label="Нравится"
-              ></button>
-            </div>
-          </li>
-        </ul>
-      </main>
+      <ul class="elements">
+        <li class="card">
+          <img src="./images/antelope-canyon-arizona.jpg" alt="Каньон Антилопы, Аризона" class="card__photo" />
+          <div class="card__caption">
+            <h2 class="card__title">Каньон Антилопы</h2>
+            <button class="card__like" type="button" aria-label="Нравится"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img src="./images/faro-portugal.jpg" alt="Фаро, Португалия" class="card__photo" />
+          <div class="card__caption">
+            <h2 class="card__title">Фаро</h2>
+            <button class="card__like" type="button" aria-label="Нравится"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img src="./images/grand-canyon-arizona.jpg" alt="Большой каньон, Аризона" class="card__photo" />
+          <div class="card__caption">
+            <h2 class="card__title">Большой каньон</h2>
+            <button class="card__like" type="button" aria-label="Нравится"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img src="./images/paraty-brazil.jpg" alt="Парати, Бразилия" class="card__photo" />
+          <div class="card__caption">
+            <h2 class="card__title">Парати</h2>
+            <button class="card__like" type="button" aria-label="Нравится"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img src="./images/san-francisco-ca.jpg" alt="Пальмы в Сан-Франциско" class="card__photo" />
+          <div class="card__caption">
+            <h2 class="card__title">Сан-Франциско</h2>
+            <button class="card__like" type="button" aria-label="Нравится"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img src="./images/wooden-shoe-tulip-farm-oregon.jpg" alt="Тюльпан на ферме Wooden Shoe, Орегон"
+            class="card__photo" />
+          <div class="card__caption">
+            <h2 class="card__title">Ферма Wooden Shoe</h2>
+            <button class="card__like" type="button" aria-label="Нравится"></button>
+          </div>
+        </li>
+      </ul>
+    </main>
 
-      <footer class="footer">
-        <p class="footer__copyright">&copy; 2022. Алексей Бельтюков</p>
-      </footer>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2022. Алексей Бельтюков</p>
+    </footer>
+  </div>
+
+  <div class="popup">
+    <div class="popup__content">
+      <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <form class="popup__form">
+        <input class="popup__input popup__input_type_name" type="text" name="name" required />
+        <input class="popup__input popup__input_type_about" type="text" name="about" required />
+        <button class="popup__submit-button" type="submit" aria-label="Сохранить">
+          Сохранить
+        </button>
+      </form>
     </div>
+  </div>
+  <script src="./scripts/script.js"></script>
+</body>
 
-    <div class="popup">
-      <div class="popup__content">
-        <button
-          class="popup__close-button"
-          type="button"
-          aria-label="Закрыть"
-        ></button>
-        <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form">
-          <input
-            class="popup__input popup__input_type_name"
-            type="text"
-            name="name"
-          />
-          <input
-            class="popup__input popup__input_type_about"
-            type="text"
-            name="about"
-          />
-          <button
-            class="popup__submit-button"
-            type="submit"
-            aria-label="Сохранить"
-          >
-            Сохранить
-          </button>
-        </form>
-      </div>
-    </div>
-    <script src="./scripts/script.js"></script>
-  </body>
 </html>

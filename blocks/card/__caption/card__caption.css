@@ -2,11 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  width: 246px;
   margin: auto;
   padding-top: 20px;
   padding-bottom: 20px;
-
+  width: 246px;
   gap: 20px;
 }
