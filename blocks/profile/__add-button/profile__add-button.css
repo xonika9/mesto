@@ -6,9 +6,7 @@
   height: 50px;
   border: 2px solid #fff;
   border-radius: 2px;
-  background: transparent url("../../../images/add-button.svg");
-  background-position: center;
-  background-repeat: no-repeat;
+  background: transparent url("../../../images/add-button.svg") center no-repeat;
   cursor: pointer;
   transition: opacity 0.3s;
 }
@@ -20,5 +18,6 @@
 @media screen and (max-width: 640px) {
   .profile__add-button {
     width: 282px;
+    background: transparent url('../../../images/add-button-small.svg') center no-repeat;
   }
 }

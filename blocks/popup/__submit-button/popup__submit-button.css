@@ -20,10 +20,10 @@
   opacity: 0.8;
 }
 
-@media screen and (min-width:767px) {
+@media screen and (max-width:767px) {
   .popup__submit-button {
     margin-top: 45px;
+    height: 46px;
     font-size: 14px;
-
   }
 }

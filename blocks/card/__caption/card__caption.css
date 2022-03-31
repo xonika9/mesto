@@ -4,7 +4,14 @@
   justify-content: space-between;
   margin: auto;
   padding-top: 20px;
-  padding-bottom: 20px;
-  width: 246px;
+  padding-bottom: 25px;
+  width: 242px;
   gap: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .card__caption {
+    padding-top: 21px;
+    padding-bottom: 26px;
+  }
 }
