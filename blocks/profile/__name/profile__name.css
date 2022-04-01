@@ -8,7 +8,12 @@
   font-weight: 500;
   font-size: 42px;
   line-height: 1.14;
+}
 
+@media screen and (max-width: 900px) {
+  .profile__name {
+    max-width: 330px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -17,6 +22,5 @@
     text-align: center;
     font-size: 27px;
     line-height: 1.22;
-
   }
 }

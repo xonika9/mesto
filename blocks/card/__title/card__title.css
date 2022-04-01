@@ -1,6 +1,7 @@
 .card__title {
   overflow: hidden;
   margin: 0;
+  padding: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   font-weight: 900;

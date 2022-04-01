@@ -10,6 +10,12 @@
   line-height: 1.22;
 }
 
+@media screen and (max-width: 900px) {
+  .profile__about {
+    max-width: 330px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .profile__about {
     max-width: 250px;

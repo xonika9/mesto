@@ -1,5 +1,7 @@
 .card {
   overflow: hidden;
+  margin: 0;
+  padding: 0;
   max-width: 282px;
   border-radius: 10px;
   background-color: #fff;
