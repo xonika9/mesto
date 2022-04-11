@@ -1,3 +1,29 @@
+const initialCards = [
+  {
+    name: 'Каньон Антилопы',
+    link: 'https://i.imgur.com/5tEtE4H.jpg',
+  },
+  {
+    name: 'Фаро',
+    link: 'https://i.imgur.com/SoPTyZC.jpg',
+  },
+  {
+    name: 'Большой каньон',
+    link: 'https://i.imgur.com/uRqdyEn.jpg',
+  },
+  {
+    name: 'Парати',
+    link: 'https://i.imgur.com/W2LiFmb.jpg',
+  },
+  {
+    name: 'Сан-Франциско',
+    link: 'https://i.imgur.com/KQvphbw.jpg',
+  },
+  {
+    name: 'Ферма Wooden Shoe',
+    link: 'https://i.imgur.com/hqnHN3f.jpg',
+  },
+];
 const popupOpenButton = document.querySelector('.profile__edit-button');
 const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__about');
