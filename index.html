@@ -44,7 +44,7 @@
     </footer>
   </div>
 
-  <div class="popup popup_type-edit-profile">
+  <div class="popup popup_type_edit-profile">
     <div class="popup__content">
       <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
@@ -58,13 +58,13 @@
     </div>
   </div>
 
-  <div class="popup popup_type-add-card">
+  <div class="popup popup_type_add-card">
     <div class="popup__content">
       <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
       <h2 class="popup__title">Новое место</h2>
       <form class="popup__form" name="add__form">
         <input class="popup__input popup__input_type_card-title" type="text" name="card-title" placeholder="Название"
-          required />
+          required minlength="2" maxlength="40" />
         <input class="popup__input popup__input_type_image-link" type="text" name="image-link"
           placeholder="Ссылка на картинку" required />
         <button class="popup__submit-button" type="submit" aria-label="Создать">
@@ -74,7 +74,7 @@
     </div>
   </div>
 
-  <div class="popup popup_type-image">
+  <div class="popup popup_type_image">
     <div class="popup__content popup__content_image">
       <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
       <figure class="popup__figure">
@@ -95,6 +95,7 @@
     </li>
   </template>
 
+  <script src="./scripts/cards.js"></script>
   <script src="./scripts/index.js"></script>
 </body>
 
