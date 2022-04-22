@@ -77,6 +77,15 @@ function handleAddCard(evt) {
   cardsContainer.prepend(newCard);
   closePopup(cardPopupContainer);
 }
+
+function overlayClose(evt) {
+  if (evt.target.classList.contains('popup_is-opened')) {
+    closePopup(profilePopupContainer);
+    closePopup(imagePopupContainer);
+    closePopup(cardPopupContainer);
+  }
+}
+
 profileEditButton.addEventListener('click', handleOpenProfile);
 profileCloseButton.addEventListener('click', () => closePopup(profilePopupContainer));
 profileEditForm.addEventListener('submit', handleSubmitProfile);
@@ -84,4 +93,7 @@ imageCloseButton.addEventListener('click', () => closePopup(imagePopupContainer)
 cardAddButton.addEventListener('click', handleOpenCard);
 cardAddForm.addEventListener('submit', handleAddCard);
 cardCloseButton.addEventListener('click', () => closePopup(cardPopupContainer));
+
+document.addEventListener('click', overlayClose);
+
 getCardsList();
