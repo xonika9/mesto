@@ -78,8 +78,17 @@ function handleAddCard(evt) {
   closePopup(cardPopupContainer);
 }
 
-function overlayClose(evt) {
+function handleOverlayClose(evt) {
   if (evt.target.classList.contains('popup_is-opened')) {
+    closePopup(profilePopupContainer);
+    closePopup(imagePopupContainer);
+    closePopup(cardPopupContainer);
+  }
+}
+
+function handleEscClose(evt) {
+  const escCode = 'Escape';
+  if (evt.key === escCode) {
     closePopup(profilePopupContainer);
     closePopup(imagePopupContainer);
     closePopup(cardPopupContainer);
@@ -94,6 +103,7 @@ cardAddButton.addEventListener('click', handleOpenCard);
 cardAddForm.addEventListener('submit', handleAddCard);
 cardCloseButton.addEventListener('click', () => closePopup(cardPopupContainer));
 
-document.addEventListener('click', overlayClose);
+document.addEventListener('click', handleOverlayClose);
+document.addEventListener('keydown', handleEscClose);
 
 getCardsList();
