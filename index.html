@@ -49,8 +49,10 @@
       <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
       <form class="popup__form" name="popup__form">
-        <input class="popup__input popup__input_type_name" type="text" name="name" required />
-        <input class="popup__input popup__input_type_about" type="text" name="about" required />
+        <input class="popup__input popup__input_type_name" type="text" name="name" required minlength="2"
+          maxlength="40" />
+        <input class="popup__input popup__input_type_about" type="text" name="about" required minlength="2"
+          maxlength="200" />
         <button class="popup__submit-button" type="submit" aria-label="Сохранить">
           Сохранить
         </button>
@@ -64,8 +66,8 @@
       <h2 class="popup__title">Новое место</h2>
       <form class="popup__form" name="add__form">
         <input class="popup__input popup__input_type_card-title" type="text" name="card-title" placeholder="Название"
-          required minlength="2" maxlength="40" />
-        <input class="popup__input popup__input_type_image-link" type="text" name="image-link"
+          required minlength="2" maxlength="30" />
+        <input class="popup__input popup__input_type_image-link" type="url" name="image-link"
           placeholder="Ссылка на картинку" required />
         <button class="popup__submit-button" type="submit" aria-label="Создать">
           Создать
