@@ -81,13 +81,11 @@ function handleAddCard(evt) {
   cardsContainer.prepend(newCard);
   closePopup(cardPopupContainer);
 }
-
 function handleOverlayClose(evt) {
   if (evt.target.classList.contains('popup_is-opened')) {
     closePopup(evt.target);
   }
 }
-
 function handleEscClose(evt) {
   const escCode = 'Escape';
   if (evt.key === escCode) {
@@ -95,7 +93,6 @@ function handleEscClose(evt) {
     closePopup(popupIsOpened);
   }
 }
-
 profileEditButton.addEventListener('click', handleOpenProfile);
 profileCloseButton.addEventListener('click', () => closePopup(profilePopupContainer));
 profileEditForm.addEventListener('submit', handleSubmitProfile);
