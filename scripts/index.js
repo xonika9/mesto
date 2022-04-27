@@ -42,13 +42,18 @@ function handleRemoveCard(evt) {
 }
 function openPopup(modalWindow) {
   modalWindow.classList.add('popup_is-opened');
+  document.addEventListener('click', handleOverlayClose);
+  document.addEventListener('keydown', handleEscClose);
 }
 function closePopup(modalWindow) {
   modalWindow.classList.remove('popup_is-opened');
+  document.removeEventListener('click', handleOverlayClose);
+  document.removeEventListener('keydown', handleEscClose);
 }
 function handleOpenProfile() {
   nameInput.value = profileName.textContent;
   aboutInput.value = profileAbout.textContent;
+  resetErrors(profilePopupContainer, config);
   openPopup(profilePopupContainer);
 }
 function handleSubmitProfile(evt) {
@@ -66,6 +71,7 @@ function handleOpenImage(item) {
 function handleOpenCard() {
   titleInput.value = '';
   linkInput.value = '';
+  resetErrors(cardPopupContainer, config);
   openPopup(cardPopupContainer);
 }
 function handleAddCard(evt) {
@@ -76,6 +82,18 @@ function handleAddCard(evt) {
   });
   cardsContainer.prepend(newCard);
   closePopup(cardPopupContainer);
+}
+function handleOverlayClose(evt) {
+  if (evt.target.classList.contains('popup_is-opened')) {
+    closePopup(evt.target);
+  }
+}
+function handleEscClose(evt) {
+  const escCode = 'Escape';
+  if (evt.key === escCode) {
+    const popupIsOpened = document.querySelector('.popup_is-opened');
+    closePopup(popupIsOpened);
+  }
 }
 profileEditButton.addEventListener('click', handleOpenProfile);
 profileCloseButton.addEventListener('click', () => closePopup(profilePopupContainer));
