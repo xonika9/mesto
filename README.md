@@ -26,4 +26,4 @@
   * Валидация форм
   * Кнопка лайк
 
-Ссылка на [GitHub Pages]('https://xonika9.github.io/mesto/')
+Ссылка на [GitHub Pages](https://xonika9.github.io/mesto/)
