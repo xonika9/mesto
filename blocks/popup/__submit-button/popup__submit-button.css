@@ -25,6 +25,7 @@
   background-color: #fff;
   color: #000;
   opacity: 0.2;
+  cursor: default;
 }
 
 @media screen and (max-width:767px) {
