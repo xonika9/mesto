@@ -53,6 +53,7 @@ function closePopup(modalWindow) {
 function handleOpenProfile() {
   nameInput.value = profileName.textContent;
   aboutInput.value = profileAbout.textContent;
+  resetErrors(profilePopupContainer, config);
   openPopup(profilePopupContainer);
 }
 function handleSubmitProfile(evt) {
@@ -70,6 +71,7 @@ function handleOpenImage(item) {
 function handleOpenCard() {
   titleInput.value = '';
   linkInput.value = '';
+  resetErrors(cardPopupContainer, config);
   openPopup(cardPopupContainer);
 }
 function handleAddCard(evt) {
@@ -100,5 +102,4 @@ imageCloseButton.addEventListener('click', () => closePopup(imagePopupContainer)
 cardAddButton.addEventListener('click', handleOpenCard);
 cardAddForm.addEventListener('submit', handleAddCard);
 cardCloseButton.addEventListener('click', () => closePopup(cardPopupContainer));
-
 getCardsList();
