@@ -1,6 +1,6 @@
 import initialCards from './cards.js';
 import config from './config.js';
-import Card from './Card;js';
+import Card from './Card.js';
 import FormValidator from './FormValidator.js';
 const imagePopupContainer = document.querySelector('.popup_type_image');
 const imageCloseButton = imagePopupContainer.querySelector('.popup__close-button');
@@ -22,28 +22,36 @@ const cardCloseButton = cardPopupContainer.querySelector('.popup__close-button')
 const cardAddForm = cardPopupContainer.querySelector('.popup__form');
 const cardsContainer = document.querySelector('.elements');
 const template = document.querySelector('.card__template');
-function getCardsList() {
-  const cardsList = initialCards.map(getCard);
-  cardsContainer.append(...cardsList);
-}
-function getCard(item) {
-  const newCard = template.content.cloneNode(true);
-  const title = newCard.querySelector('.card__title');
-  const image = newCard.querySelector('.card__photo');
-  const removeButton = newCard.querySelector('.card__remove');
-  const likeButton = newCard.querySelector('.card__like');
-  title.textContent = item.name;
-  image.src = item.link;
-  image.alt = item.name;
-  removeButton.addEventListener('click', handleRemoveCard);
-  likeButton.addEventListener('click', () => likeButton.classList.toggle('card__like_active'));
-  image.addEventListener('click', () => handleOpenImage(item));
-  return newCard;
-}
-function handleRemoveCard(evt) {
-  const card = evt.target.closest('.card');
-  card.remove();
-}
+const cardValidator = new FormValidator(config, cardAddForm);
+const profileValidator = new FormValidator(config, profileEditForm);
+const getNewCard = (item) => {
+  return new Card(item, '.card__template', handleOpenCard).generateCard();
+};
+const getCardsList = () => {
+  initialCards.forEach((item) => {
+    const cardElement = getNewCard(item);
+    cardsContainer.append(cardElement);
+  });
+  return cardsContainer;
+};
+// function getCard(item) {
+//   const newCard = template.content.cloneNode(true);
+//   const title = newCard.querySelector('.card__title');
+//   const image = newCard.querySelector('.card__photo');
+//   const removeButton = newCard.querySelector('.card__remove');
+//   const likeButton = newCard.querySelector('.card__like');
+//   title.textContent = item.name;
+//   image.src = item.link;
+//   image.alt = item.name;
+//   removeButton.addEventListener('click', handleRemoveCard);
+//   likeButton.addEventListener('click', () => likeButton.classList.toggle('card__like_active'));
+//   image.addEventListener('click', () => handleOpenImage(item));
+//   return newCard;
+// }
+// function handleRemoveCard(evt) {
+//   const card = evt.target.closest('.card');
+//   card.remove(); //
+// }
 function openPopup(modalWindow) {
   modalWindow.classList.add('popup_is-opened');
   document.addEventListener('click', handleOverlayClose);
@@ -66,21 +74,21 @@ function handleSubmitProfile(evt) {
   profileAbout.textContent = aboutInput.value;
   closePopup(profilePopupContainer);
 }
-function handleOpenImage(item) {
-  popupImage.src = item.link;
-  popupImage.alt = item.name;
-  popupCaption.textContent = item.name;
+// function handleOpenImage(item) {
+//   popupImage.src = item.link;
+//   popupImage.alt = item.name;
+//   popupCaption.textContent = item.name;
+//   openPopup(imagePopupContainer);
+// }
+function handleOpenCard(data) {
+  popupImage.src = data.link;
+  popupImage.alt = data.name;
+  popupCaption.textContent = data.name;
   openPopup(imagePopupContainer);
-}
-function handleOpenCard() {
-  titleInput.value = '';
-  linkInput.value = '';
-  resetErrors(cardPopupContainer, config);
-  openPopup(cardPopupContainer);
 }
 function handleAddCard(evt) {
   evt.preventDefault();
-  const newCard = getCard({
+  const newCard = getNewCard({
     name: titleInput.value,
     link: linkInput.value,
   });
@@ -100,10 +108,9 @@ function handleEscClose(evt) {
   }
 }
 profileEditButton.addEventListener('click', handleOpenProfile);
-profileCloseButton.addEventListener('click', () => closePopup(profilePopupContainer));
 profileEditForm.addEventListener('submit', handleSubmitProfile);
-imageCloseButton.addEventListener('click', () => closePopup(imagePopupContainer));
 cardAddButton.addEventListener('click', handleOpenCard);
 cardAddForm.addEventListener('submit', handleAddCard);
-cardCloseButton.addEventListener('click', () => closePopup(cardPopupContainer));
-getCardsList();
+cardValidator.enableValidation();
+profileValidator.enableValidation();
+getCardsList(initialCards);

@@ -42,7 +42,7 @@ class FormValidator {
     });
     this._toggleButtonState();
   };
-  toggleButtonState = () => {
+  _toggleButtonState = () => {
     this._buttonElement.disabled = !this._formElement.checkValidity();
     this._buttonElement.classList.toggle(
       this._inactiveButtonClass,
