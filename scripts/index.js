@@ -1,3 +1,7 @@
+import initialCards from './cards.js';
+import config from './config.js';
+import Card from './Card;js';
+import FormValidator from './FormValidator.js';
 const imagePopupContainer = document.querySelector('.popup_type_image');
 const imageCloseButton = imagePopupContainer.querySelector('.popup__close-button');
 const popupImage = imagePopupContainer.querySelector('.popup__image');
