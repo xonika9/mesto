@@ -18,8 +18,7 @@ const titleInput = cardPopupContainer.querySelector('.popup__input_type_card-tit
 const linkInput = cardPopupContainer.querySelector('.popup__input_type_image-link');
 const cardAddForm = cardPopupContainer.querySelector('.popup__form');
 const cardsContainer = document.querySelector('.elements');
-const cardValidator = new FormValidator(config, cardAddForm);
-const profileValidator = new FormValidator(config, profileEditForm);
+const formValidators = {};
 const getNewCard = (item) => {
   return new Card(item, '.card__template', handleOpenCard).generateCard();
 };
@@ -43,7 +42,7 @@ const closePopup = (modalWindow) => {
 const handleOpenProfile = () => {
   nameInput.value = profileName.textContent;
   aboutInput.value = profileAbout.textContent;
-  profileValidator.resetValidation();
+  formValidators['popup__form'].resetValidation();
   openPopup(profilePopupContainer);
 };
 const handleSubmitProfile = (evt) => {
@@ -60,7 +59,7 @@ const handleOpenCard = (data) => {
 };
 const handleOpenAddCardPopup = () => {
   cardAddForm.reset();
-  cardValidator.resetValidation();
+  formValidators['add__form'].resetValidation();
   openPopup(cardPopupContainer);
 };
 const handleAddCard = (evt) => {
@@ -84,10 +83,18 @@ const handleEscClose = (evt) => {
     closePopup(popupIsOpened);
   }
 };
+const enableValidation = (config) => {
+  const formList = Array.from(document.querySelectorAll(config.formSelector));
+  formList.forEach((formElement) => {
+    const validator = new FormValidator(config, formElement);
+    const formName = formElement.getAttribute('name');
+    formValidators[formName] = validator;
+    validator.enableValidation();
+  });
+};
+enableValidation(config);
 profileEditButton.addEventListener('click', handleOpenProfile);
 profileEditForm.addEventListener('submit', handleSubmitProfile);
 cardAddButton.addEventListener('click', handleOpenAddCardPopup);
 cardAddForm.addEventListener('submit', handleAddCard);
-cardValidator.enableValidation();
-profileValidator.enableValidation();
 getCardsList(initialCards);
