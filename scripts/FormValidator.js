@@ -11,13 +11,13 @@ class FormValidator {
     this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
   }
   _showInputError = (inputElement) => {
-    const errorElement = document.querySelector(`.${inputElement.id}-error`);
+    const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
     errorElement.classList.add(this._errorClass);
     inputElement.classList.add(this._inputErrorClass);
     errorElement.textContent = inputElement.validationMessage;
   };
   _hideInputError = (inputElement) => {
-    const errorElement = document.querySelector(`.${inputElement.id}-error`);
+    const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
     errorElement.classList.remove(this._errorClass);
     inputElement.classList.remove(this._inputErrorClass);
     errorElement.textContent = '';
@@ -30,7 +30,7 @@ class FormValidator {
     }
     this._toggleButtonState();
   };
-  resetErrors = () => {
+  resetValidation = () => {
     this._inputList.forEach((_inputElement) => {
       this._hideInputError(_inputElement);
     });

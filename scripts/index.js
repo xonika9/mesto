@@ -43,7 +43,7 @@ const closePopup = (modalWindow) => {
 const handleOpenProfile = () => {
   nameInput.value = profileName.textContent;
   aboutInput.value = profileAbout.textContent;
-  profileValidator.resetErrors();
+  profileValidator.resetValidation();
   openPopup(profilePopupContainer);
 };
 const handleSubmitProfile = (evt) => {
@@ -60,7 +60,7 @@ const handleOpenCard = (data) => {
 };
 const handleOpenAddCardPopup = () => {
   cardAddForm.reset();
-  cardValidator.resetErrors();
+  cardValidator.resetValidation();
   openPopup(cardPopupContainer);
 };
 const handleAddCard = (evt) => {
