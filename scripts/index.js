@@ -65,7 +65,7 @@ function closePopup(modalWindow) {
 function handleOpenProfile() {
   nameInput.value = profileName.textContent;
   aboutInput.value = profileAbout.textContent;
-  resetErrors(profilePopupContainer, config);
+  profileValidator.resetErrors();
   openPopup(profilePopupContainer);
 }
 function handleSubmitProfile(evt) {
