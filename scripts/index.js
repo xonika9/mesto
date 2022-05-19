@@ -53,13 +53,15 @@ const getCardsList = () => {
 //   card.remove(); //
 // }
 function openPopup(modalWindow) {
+  console.log(modalWindow);
   modalWindow.classList.add('popup_is-opened');
-  document.addEventListener('click', handleOverlayClose);
+  modalWindow.addEventListener('click', handleOverlayClose);
   document.addEventListener('keydown', handleEscClose);
 }
 function closePopup(modalWindow) {
+  console.log(modalWindow);
   modalWindow.classList.remove('popup_is-opened');
-  document.removeEventListener('click', handleOverlayClose);
+  modalWindow.removeEventListener('click', handleOverlayClose);
   document.removeEventListener('keydown', handleEscClose);
 }
 function handleOpenProfile() {
@@ -96,8 +98,8 @@ function handleAddCard(evt) {
   closePopup(cardPopupContainer);
 }
 function handleOverlayClose(evt) {
-  if (evt.target.classList.contains('popup_is-opened')) {
-    closePopup(evt.target);
+  if (evt.target === evt.currentTarget || evt.target.classList.contains('popup__close-button')) {
+    closePopup(evt.currentTarget);
   }
 }
 function handleEscClose(evt) {
