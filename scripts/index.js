@@ -53,15 +53,13 @@ const getCardsList = () => {
 //   card.remove(); //
 // }
 function openPopup(modalWindow) {
-  console.log(modalWindow);
   modalWindow.classList.add('popup_is-opened');
-  modalWindow.addEventListener('click', handleOverlayClose);
+  modalWindow.addEventListener('mousedown', handleClosePopup);
   document.addEventListener('keydown', handleEscClose);
 }
 function closePopup(modalWindow) {
-  console.log(modalWindow);
   modalWindow.classList.remove('popup_is-opened');
-  modalWindow.removeEventListener('click', handleOverlayClose);
+  modalWindow.removeEventListener('mousedown', handleClosePopup);
   document.removeEventListener('keydown', handleEscClose);
 }
 function handleOpenProfile() {
@@ -88,6 +86,11 @@ function handleOpenCard(data) {
   popupCaption.textContent = data.name;
   openPopup(imagePopupContainer);
 }
+function handleOpenAddCardPopup() {
+  cardAddForm.reset();
+  cardValidator.resetErrors();
+  openPopup(cardPopupContainer);
+}
 function handleAddCard(evt) {
   evt.preventDefault();
   const newCard = getNewCard({
@@ -97,7 +100,7 @@ function handleAddCard(evt) {
   cardsContainer.prepend(newCard);
   closePopup(cardPopupContainer);
 }
-function handleOverlayClose(evt) {
+function handleClosePopup(evt) {
   if (evt.target === evt.currentTarget || evt.target.classList.contains('popup__close-button')) {
     closePopup(evt.currentTarget);
   }
@@ -111,7 +114,7 @@ function handleEscClose(evt) {
 }
 profileEditButton.addEventListener('click', handleOpenProfile);
 profileEditForm.addEventListener('submit', handleSubmitProfile);
-cardAddButton.addEventListener('click', handleOpenCard);
+cardAddButton.addEventListener('click', handleOpenAddCardPopup);
 cardAddForm.addEventListener('submit', handleAddCard);
 cardValidator.enableValidation();
 profileValidator.enableValidation();
