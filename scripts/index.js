@@ -30,40 +30,40 @@ const getCardsList = () => {
   });
   return cardsContainer;
 };
-function openPopup(modalWindow) {
+const openPopup = (modalWindow) => {
   modalWindow.classList.add('popup_is-opened');
   modalWindow.addEventListener('mousedown', handleClosePopup);
   document.addEventListener('keydown', handleEscClose);
-}
-function closePopup(modalWindow) {
+};
+const closePopup = (modalWindow) => {
   modalWindow.classList.remove('popup_is-opened');
   modalWindow.removeEventListener('mousedown', handleClosePopup);
   document.removeEventListener('keydown', handleEscClose);
-}
-function handleOpenProfile() {
+};
+const handleOpenProfile = () => {
   nameInput.value = profileName.textContent;
   aboutInput.value = profileAbout.textContent;
   profileValidator.resetErrors();
   openPopup(profilePopupContainer);
-}
-function handleSubmitProfile(evt) {
+};
+const handleSubmitProfile = (evt) => {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileAbout.textContent = aboutInput.value;
   closePopup(profilePopupContainer);
-}
-function handleOpenCard(data) {
+};
+const handleOpenCard = (data) => {
   popupImage.src = data.link;
   popupImage.alt = data.name;
   popupCaption.textContent = data.name;
   openPopup(imagePopupContainer);
-}
-function handleOpenAddCardPopup() {
+};
+const handleOpenAddCardPopup = () => {
   cardAddForm.reset();
   cardValidator.resetErrors();
   openPopup(cardPopupContainer);
-}
-function handleAddCard(evt) {
+};
+const handleAddCard = (evt) => {
   evt.preventDefault();
   const newCard = getNewCard({
     name: titleInput.value,
@@ -71,19 +71,19 @@ function handleAddCard(evt) {
   });
   cardsContainer.prepend(newCard);
   closePopup(cardPopupContainer);
-}
-function handleClosePopup(evt) {
+};
+const handleClosePopup = (evt) => {
   if (evt.target === evt.currentTarget || evt.target.classList.contains('popup__close-button')) {
     closePopup(evt.currentTarget);
   }
-}
-function handleEscClose(evt) {
+};
+const handleEscClose = (evt) => {
   const escCode = 'Escape';
   if (evt.key === escCode) {
     const popupIsOpened = document.querySelector('.popup_is-opened');
     closePopup(popupIsOpened);
   }
-}
+};
 profileEditButton.addEventListener('click', handleOpenProfile);
 profileEditForm.addEventListener('submit', handleSubmitProfile);
 cardAddButton.addEventListener('click', handleOpenAddCardPopup);
