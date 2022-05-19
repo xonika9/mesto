@@ -36,18 +36,18 @@ class FormValidator {
     });
     this._toggleButtonState();
   };
-  enableValidation = () => {
-    this._inputList.forEach((_inputElement) => {
-      _inputElement.addEventListener('input', () => this._checkInputValidity(_inputElement));
-    });
-    this._toggleButtonState();
-  };
   _toggleButtonState = () => {
     this._buttonElement.disabled = !this._formElement.checkValidity();
     this._buttonElement.classList.toggle(
       this._inactiveButtonClass,
       !this._formElement.checkValidity()
     );
+  };
+  enableValidation = () => {
+    this._inputList.forEach((_inputElement) => {
+      _inputElement.addEventListener('input', () => this._checkInputValidity(_inputElement));
+    });
+    this._toggleButtonState();
   };
 }
 export default FormValidator;
