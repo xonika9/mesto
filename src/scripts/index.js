@@ -1,3 +1,4 @@
+import '../pages/index.css';
 import initialCards from './cards.js';
 import config from './config.js';
 import Card from './Card.js';

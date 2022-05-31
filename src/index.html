@@ -8,9 +8,8 @@
       name="description"
       content="Mesto - интерактивная страница, куда можно добавлять фотографии, удалять их и ставить лайки."
     />
-    <meta name="keywords" content="html, css" />
+    <meta name="keywords" content="html, css, javascript" />
     <meta name="author" content="Алексей Бельтюков" />
-    <link rel="stylesheet" href="./pages/index.css" />
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
     <title>
       Mesto - интерактивная страница, куда можно добавлять фотографии, удалять их и ставить лайки.
@@ -26,7 +25,11 @@
       <main class="content">
         <section class="profile">
           <div class="profile__info">
-            <img src="./images/avatar-cousteau.jpg" alt="Жак-Ив Кусто" class="profile__avatar" />
+            <img
+              src="<%=require('./images/avatar-cousteau.jpg')%>"
+              alt="Жак-Ив Кусто"
+              class="profile__avatar"
+            />
             <div class="profile__text">
               <div class="profile__title">
                 <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -134,7 +137,5 @@
         </div>
       </li>
     </template>
-
-    <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>
