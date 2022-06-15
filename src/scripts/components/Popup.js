@@ -1,6 +1,7 @@
 class Popup {
   constructor(popupSelector) {
     this._popup = document.querySelector(popupSelector);
+    this._handleEscClose = this._handleEscClose.bind(this);
   }
   open = () => {
     this._popup.classList.add('popup_is-opened');
@@ -22,7 +23,7 @@ class Popup {
     }
   };
   setEventListeners = () => {
-    this._popup.addEventListener('mousedown', handleClosePopup);
+    this._popup.addEventListener('mousedown', this._handleClosePopup);
   };
 }
 export default Popup;
