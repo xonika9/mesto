@@ -6,7 +6,6 @@ class PopupWithImage extends Popup {
 
     console.log('popupSelector from Image:' + popupSelector);
     console.log('this._image from Image:' + this._image);
-    console.log('this._caption from Caption:' + this._caption);
   }
   open = ({ name, link }) => {
     this._image.src = link;
