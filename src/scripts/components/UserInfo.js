@@ -1,7 +1,7 @@
 class UserInfo {
   constructor(userName, userAbout) {
-    console.log('userName:' + userName);
-    console.log('userAbout:' + userAbout);
+    console.log('userName from UserInfo:' + userName);
+    console.log('userAbout from UserInfo:' + userAbout);
     this._userName = userName;
     this._userAbout = userAbout;
   }
