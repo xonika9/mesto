@@ -1,9 +1,9 @@
 class Card {
-  constructor(item, templateSelector, handleOpenImage) {
-    this._name = item.name;
-    this._link = item.link;
-    this._templateSelector = templateSelector;
-    this._handleOpenImage = handleOpenImage;
+  constructor({ title, link }, templateSelector, handleCardClick) {
+    (this._title = title),
+      (this._link = link),
+      (this._templateSelector = templateSelector),
+      (this._handleCardClick = handleCardClick);
   }
   _getTemplate = () => {
     const cardElement = document
@@ -23,7 +23,7 @@ class Card {
     this._likeButton.addEventListener('click', this._toggleLike);
     this._removeButton.addEventListener('click', this._handleRemove);
     this._cardImage.addEventListener('click', () =>
-      this._handleOpenImage({ name: this._name, link: this._link })
+      this._handleCardClick({ title: this._title, link: this._link })
     );
   };
   generateCard = () => {
@@ -31,9 +31,9 @@ class Card {
     this._cardImage = this._card.querySelector('.card__photo');
     this._likeButton = this._card.querySelector('.card__like');
     this._removeButton = this._card.querySelector('.card__remove');
-    this._card.querySelector('.card__title').textContent = this._name;
+    this._card.querySelector('.card__title').textContent = this._title;
     this._cardImage.src = this._link;
-    this._cardImage.alt = this._name;
+    this._cardImage.alt = this._title;
     this._setEventListeners();
     return this._card;
   };
