@@ -1,6 +1,5 @@
 class Card {
   constructor({ title, link }, templateSelector, handleCardClick) {
-    console.log({ title, link });
     (this._title = title),
       (this._link = link),
       (this._templateSelector = templateSelector),
