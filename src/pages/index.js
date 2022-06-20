@@ -33,7 +33,7 @@ const handleOpenProfile = () => {
   profileEditPopup.open();
 };
 const handleSubmitProfile = (formValues) => {
-  userInfo.setUserinfo(formValues);
+  userInfo.setUserInfo(formValues);
 };
 const handleOpenCardAddPopup = () => {
   cardFormValidator.resetValidation();

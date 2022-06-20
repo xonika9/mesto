@@ -9,7 +9,7 @@ class UserInfo {
       about: this._userAbout.textContent,
     };
   };
-  setUserinfo = ({ name, about }) => {
+  setUserInfo = ({ name, about }) => {
     this._userName.textContent = name;
     this._userAbout.textContent = about;
   };
