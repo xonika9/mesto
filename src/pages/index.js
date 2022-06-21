@@ -13,10 +13,13 @@ import {
   cardAddPopupSelector,
   profileNameSelector,
   profileAboutSelector,
+  profileAvatarSelector,
   cardsContainerSelector,
   cardTemplateSelector,
   profileEditButton,
   cardAddButton,
+  confirmPopupSelector,
+  avatarPopupSelector,
 } from '../scripts/constants/constants.js';
 const addNewCard = ({ title, link }) => {
   const cardElement = new Card(
