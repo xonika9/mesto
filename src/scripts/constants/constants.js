@@ -6,11 +6,11 @@ const profileAboutSelector = '.profile__about';
 const profileAvatarSelector = '.profile__avatar';
 const cardsContainerSelector = '.elements';
 const cardTemplateSelector = '.card__template';
-const profileEditButton = document.querySelector('.profile__edit-button');
-const cardAddButton = document.querySelector('.profile__add-button');
 const confirmPopupSelector = '.popup_type_confirm';
 const avatarPopupSelector = '.popup_type_update-avatar';
-
+const profileEditButton = document.querySelector('.profile__edit-button');
+const cardAddButton = document.querySelector('.profile__add-button');
+const profileAvatarButton = document.querySelector('.profile__avatar');
 export {
   imagePopupSelector,
   profileEditPopupSelector,
@@ -20,8 +20,9 @@ export {
   profileAvatarSelector,
   cardsContainerSelector,
   cardTemplateSelector,
-  profileEditButton,
-  cardAddButton,
   confirmPopupSelector,
   avatarPopupSelector,
+  profileEditButton,
+  cardAddButton,
+  profileAvatarButton,
 };
