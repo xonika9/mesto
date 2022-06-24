@@ -11,6 +11,8 @@ const avatarPopupSelector = '.popup_type_update-avatar';
 const profileEditButton = document.querySelector('.profile__edit-button');
 const cardAddButton = document.querySelector('.profile__add-button');
 const profileAvatarButton = document.querySelector('.profile__avatar');
+const formValidators = {};
+
 export {
   imagePopupSelector,
   profileEditPopupSelector,
@@ -25,4 +27,5 @@ export {
   profileEditButton,
   cardAddButton,
   profileAvatarButton,
+  formValidators,
 };
