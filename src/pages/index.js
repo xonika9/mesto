@@ -24,7 +24,7 @@ import {
   avatarPopupSelector,
   formValidators,
 } from '../scripts/constants/constants.js';
-const addNewCard = (cardInfo) => {
+const createNewCard = (cardInfo) => {
   return new Card(
     cardInfo,
     cardTemplateSelector,
@@ -130,7 +130,7 @@ const api = new Api({
     'Content-Type': 'application/json',
   },
 });
-const cardsList = new Section(addNewCard, cardsContainerSelector);
+const cardsList = new Section(createNewCard, cardsContainerSelector);
 const userInfo = new UserInfo({
   userName: profileNameSelector,
   userAbout: profileAboutSelector,
