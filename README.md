@@ -34,3 +34,29 @@ Mesto - интерактивная страница, куда можно доб�
   * Счетчик лайков
 
 Ссылка на [GitHub Pages](https://xonika9.github.io/mesto/)
+***
+### Установка
+
+```bash
+# Clone the repository
+git clone https://github.com/xonika9/mesto.git
+
+# Enter the project directory
+cd mesto
+
+# Install dependencies
+npm i
+```
+
+### Скрипты
+
+```bash
+# Run a local server at localhost:8080
+npm run dev
+
+# Builds the app for production at the `build` folder
+npm run build
+
+# Places the production version code into the `gh-pages` branch
+npm run deploy
+```
